@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="container">
+    <div class="content-title" id="content-title">
+        <h1>Cifra de César: Codificar e decodificar</h1>
+        <img src="./assets/cifra-cesar.png" width="70px" alt="">
+        <p>Copie o seu texto para a área em baixo, selecione o deslocamento de caracteres 
+            [0-26] e clique em "Codificar". Para decodificar um texto previamente codificado,
+             insira-o na área abaixo, indique o deslocamento utilizado na codificação e clique em "Descodificar".</p>
+    </div>
+    <div class="forms-div">
+    <form id="formCodificar">
+        <label for="texto">Resultado</label>
+        <input class="input-text" type="text" name="texto" value="texto">
+        <input class="input-number" value="desloc" max="26" min="0" type="number">
+        <button type="submit" value="code">Codificar</button>
+        <button type="submit" value="decodificar">Descodificar</button>
+    </form>
+    <form action="">
+        <label for="texto">Texto</label>
+        <input class="input-text" id="input-resultado" type="text">
+    </form>
+</div>
+</div>
+    <script src="scripts.js">
+
+    </script>
+</body>
+</html>
