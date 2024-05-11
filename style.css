@@ -26,6 +26,10 @@ h1{
     flex-direction: column;
 }
 
+button{
+    cursor: pointer;
+}
+
 .content-title > img {
     align-self: center;
     width: 130px;
@@ -52,8 +56,46 @@ form{
 .input-text{
     height: 200px;
     width: 300px;
+    background-color: white;
+    border: 1px solid black;
+    
+}
+
+#input-resultado{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: rgb(61, 35, 35);
+    text-decoration: underline;
 }
 
 .input-number{
     width: 30px;
+}
+
+@media screen and (max-width: 778px) {
+    .container{
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+    .input-text{
+        width: 200px;
+    }
+    .content-title{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 558px) {
+    .container{
+        width: 350px !important;
+    }
+    .input-text{
+        width: 150px;
+    }
+    .content-title{
+        width: auto;
+    }
 }

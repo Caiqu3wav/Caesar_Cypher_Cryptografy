@@ -1,42 +1,34 @@
 document.getElementById("formCodificar").addEventListener("submit", function(event){
     event.preventDefault();
 
-    let texto = document.querySelector("#formCodificar input[name='texto']").value;
+    let texto = document.getElementById("texto").value;
     let deslocamento = parseInt(document.getElementById("deslocamento").value);
-    let modo = event.submitter.value; // Defina o modo de codificação
+    let modo = event.submitter.value; 
 
     Codific(texto, deslocamento, modo); 
 }
 )
 
-const letras = () => {
-    let letra = "";
-    let letrasString = "";
-    for (let i = 65; i <= 90; i++) {
-        let letra = String.fromCharCode(i);
-         letrasString += letra + " ";
-    }
-    return letrasString.trim();
-} 
-
-
-function Codific(texto, desloc, mode){
-    const alfabeto = letras();
+function Codific(texto, desloc, modo){
     let resultado = "";
     for (let i = 0; i < texto.length; i++){
-        let char = texto[i];
-        let index = alfabeto.indexOf(char.toUpperCase());
-        if (index !== -1){
-            if(mode === "codificar"){
-                let newIndex = (index + desloc) % alfabeto.length;
-                resultado += alfabeto[newIndex];
-            } else if (mode === "descodificar") {
-                let newIndex = (index - desloc + alfabeto.length) % alfabeto.length;
-                resultado +=alfabeto[newIndex];
+        let ascii = texto[i].charCodeAt();
+        if ((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122)) {
+        if(modo == "codificar") {
+            ascii += desloc
+            if ((ascii > 90 && texto[i] <= 'Z') || ascii > 122){
+                ascii -= 26; 
             }
-        } else {
-            resultado += char
+        } else if(modo == "descodificar") {
+            ascii -= desloc
+        if((ascii < 65 && texto[i] <= 'Z') || ascii < 97) {
+            ascii += 26;   
+        }
         }
     }
+        resultado += String.fromCharCode(ascii) 
+    }
     console.log(resultado);
-}
+    const showResult = document.getElementById('showResultado');
+    showResult.innerText = resultado;
+}  

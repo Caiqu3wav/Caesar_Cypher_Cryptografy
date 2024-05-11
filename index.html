@@ -18,14 +18,16 @@
     <div class="forms-div">
     <form id="formCodificar">
         <label for="texto">Resultado</label>
-        <input class="input-text" type="text" name="texto" value="texto">
-        <input class="input-number" value="desloc" max="26" min="0" type="number">
-        <button type="submit" value="code">Codificar</button>
-        <button type="submit" value="decodificar">Descodificar</button>
+        <input class="input-text" type="text" name="texto" id="texto">
+        <input class="input-number" id="deslocamento" max="26" min="0" type="number">
+        <button type="submit" name="modo" value="codificar">Codificar</button>
+        <button type="submit" name="modo" value="descodificar">Descodificar</button>
     </form>
     <form action="">
         <label for="texto">Texto</label>
-        <input class="input-text" id="input-resultado" type="text">
+        <div class="input-text" id="input-resultado" type="text">
+        <p id="showResultado"></p>
+        </div>
     </form>
 </div>
 </div>
